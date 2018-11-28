@@ -16,7 +16,6 @@ var filesToCache = [
   `${HOST}/imagens/edit.png`,
   `${HOST}/imagens/remove.png`,
   `${HOST}/styles/app.css`,
-  `${HOST}/scripts/app.css`,
   `${HOST}/index.html`,
   `${HOST}/scripts/store.js`,
   `${HOST}/scripts/todo.js`,
