@@ -1,4 +1,4 @@
-const HOST='https://asagod.github.io/dndsheet/final'
+const HOST = 'https://asagod.github.io/dndsheet/final'
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
