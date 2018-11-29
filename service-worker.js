@@ -6,7 +6,7 @@ if ('serviceWorker' in navigator) {
     .then(function () { console.log('Service Worker Registered'); });
 }
 
-var cacheName = 'dndsheet';
+var cacheName = 'dndsheetApp';
 var filesToCache = [
   `${HOST}/imagens/icons/icon-128x128.png`,
   `${HOST}/imagens/icons/icon-144x144.png`,
