@@ -1,6 +1,6 @@
 {
-  "name": "D&D Character Sheet",
   "short_name": "D&D Sheet",
+  "name": "D&D Character Sheet",
   "icons": [{
     "src": "images/icons/icon-128x128.png",
       "sizes": "128x128",
