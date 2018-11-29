@@ -8,13 +8,11 @@ if ('serviceWorker' in navigator) {
 
 var cacheName = 'dndsheetApp';
 var filesToCache = [
-  `${HOST}/imagens/icons/icon-128x128.png`,
-  `${HOST}/imagens/icons/icon-144x144.png`,
-  `${HOST}/imagens/icons/icon-152x152.png`,
-  `${HOST}/imagens/icons/icon-192x192.png`,
-  `${HOST}/imagens/icons/icon-256x256.png`,
-  `${HOST}/imagens/edit.png`,
-  `${HOST}/imagens/remove.png`,
+  `${HOST}/images/icons/icon-128x128.png`,
+  `${HOST}/images/icons/icon-144x144.png`,
+  `${HOST}/images/icons/icon-152x152.png`,
+  `${HOST}/images/icons/icon-192x192.png`,
+  `${HOST}/images/icons/icon-256x256.png`,
   `${HOST}/styles/app.css`,
   `${HOST}/index.html`,
   `${HOST}/scripts/store.js`,
