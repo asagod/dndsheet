@@ -93,7 +93,9 @@ class Todo extends Store {
                     <li class="list-group-item">
                     <label for="magias">Magias</label>
                     <textarea id="magias" class="form-control enter" type="text" disabled>${item.magias}</textarea></li>
-                    <li class="list-group-item"></li>
+                    <li class="list-group-item">
+                    <label for="magias">Perícias</label>
+                    <textarea id="pericias" class="form-control enter" type="text" disabled>${item.magias}</textarea></li>
                 </ul>
             </div
             <div class="card-body">
