@@ -50,37 +50,37 @@ class Todo extends Store {
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Força</span>
                 </div>
-                <input type="text" id="forca" name="forca" class="form-control text-right enter" disabled value="${item.forca}">
+                <input type="number" id="forca" name="forca" class="form-control text-right enter" disabled value="${item.forca}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Destreza</span>
                 </div>
-                <input type="text" id="destreza" name="destreza" class="form-control text-right enter" disabled value="${item.destreza}">
+                <input type="number" id="destreza" name="destreza" class="form-control text-right enter" disabled value="${item.destreza}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Constituição</span>
                 </div>
-                <input type="text" id="constituicao" name="constituicao" class="form-control text-right enter" disabled value="${item.constituicao}">
+                <input type="number" id="constituicao" name="constituicao" class="form-control text-right enter" disabled value="${item.constituicao}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Inteligência</span>
                 </div>
-                <input type="text" id="inteligencia" name="inteligencia" class="form-control text-right enter" disabled value="${item.inteligencia}">
+                <input type="number" id="inteligencia" name="inteligencia" class="form-control text-right enter" disabled value="${item.inteligencia}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Sabedoria</span>
                 </div>
-                <input type="text" id="sabedoria" name="sabedoria" class="form-control text-right enter" disabled value="${item.sabedoria}">
+                <input type="number" id="sabedoria" name="sabedoria" class="form-control text-right enter" disabled value="${item.sabedoria}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Carisma</span>
                 </div>
-                <input type="text" id="carisma" name="carisma" class="form-control text-right enter" disabled value="${item.carisma}">
+                <input type="number" id="carisma" name="carisma" class="form-control text-right enter" disabled value="${item.carisma}">
             </div>
         </div>
         </li>
