@@ -1,0 +1,1 @@
+//adicionar isso aqui Math.floor((player.stat/2)-5)
