@@ -41,20 +41,18 @@ const itemArma5 = document.getElementById('arma5')
 const itemArma6 = document.getElementById('arma6')
 const itemArmas = [itemArma1, itemArma2, itemArma3, itemArma4, itemArma5, itemArma6]
 const itemMagias = document.getElementById('magias')
-const profBonus = (Math.ceil(itemNivel))
+const profBonus = (Math.ceil((itemNivel/4) + 1))
 const divLista = document.getElementById('lista')
 const salvar = document.getElementById('salvar')
 const itensRenderizados = document.getElementById('itensRenderizados')
 
 for (const element of itemPericias){
-    if (element == true){
+    if (element.value == true){
         proeficiencias.push(profBonus)
     } else {
         proeficiencias.push(0)
     }
 }
-
-
 
 let lista = new Todo()
 
