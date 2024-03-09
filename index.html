@@ -62,7 +62,11 @@
                         <option value="Meio-Elfo">Meio-Elfo</option>
                         <option value="Draconato">Draconato</option>
                         <option value="Meio-Orc">Meio-Orc</option>
-                        <option value="Tiefling">Tiefling</option>
+                        <option value="Tabaxi">Tabaxi</option>
+                        <option value="Kenku">Kenku</option>
+                        <option value="Golias">Golias</option>
+                        <option value="Tritão">Tritão</option>
+                        <option value="Firbolg">Firbolg</option>
                     </select>
                 </div>
             </div>
@@ -72,10 +76,10 @@
                     <input type="number" id="nivel" name="nivel" class="form-control" placeholder='Nível'>
                 </div>
                 <div class="form-group col-xs-4 col-lg-2">
-                    <input type="number" id="hp" name="hp" class="form-control" placeholder='HP'>
+                    <input type="number" id="hp" name="hp" class="form-control" placeholder='Pontos de Vida'>
                 </div>
                 <div class="form-group col-xs-4 col-lg-2">
-                    <input type="number" id="ca" name="ca" class="form-control" placeholder='CA'>
+                    <input type="number" id="ca" name="ca" class="form-control" placeholder='Armadura'>
                 </div>
                 <div class="col col-xs-4 col-lg-6">
                     <input type="text" id="subclasse" name="subclasse" class="form-control"
@@ -127,7 +131,7 @@
                         <input type="text" id="carisma" name="carisma" class="form-control text-right" placeholder='0'>
                     </div>
                 </div>
-                <div class="form-group col-xs-12 col-lg-8">
+                <div class="form-group col-xs-12 col-lg-4">
                     <label for="pericias">Perícias</label>
                     <div class="row">
                         <div class="align-content-center form-group col-xs-12 col-lg-4">
@@ -173,13 +177,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-xs-12 col-lg-6">
-                    <label for="habilidades">Habilidades</label>
-                    <textarea class="form-control" name="habilidades" id="habilidades" rows="15"
-                        placeholder="Habilidades"></textarea>
-                </div>
                 <div class="form-group col-xs-12 col-lg-6">
                     <label for="armas">Armas</label>
                     <input type="text" class="form-control" name="arma1" id="arma1"><br>
@@ -192,9 +189,16 @@
             </div>
             <div class="row">
                 <div class="form-group col-xs-12 col-lg-12">
+                    <label for="habilidades">Habilidades</label>
+                    <textarea class="form-control" name="habilidades" id="habilidades" rows="15"
+                        placeholder="Habilidades"></textarea>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12 col-lg-12">
                     <div class="align-content-center">
                         <label for="magias">Magias</label>
-                        <textarea class="form-control" name="magias" id="magias" rows="10"
+                        <textarea class="form-control" name="magias" id="magias" rows="15"
                             placeholder="Magias"></textarea>
                     </div>
                 </div>
