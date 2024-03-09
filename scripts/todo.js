@@ -51,36 +51,42 @@ class Todo extends Store {
                   <span class="input-group-text score-form">Força</span>
                 </div>
                 <input type="number" id="forca" name="forca" class="form-control text-right enter" disabled value="${item.forca}">
+                <input type="number" id="destreza" name="destreza" class="form-control text-right enter" disabled value="${Math.floor((item.forca/2)-5)}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Destreza</span>
                 </div>
                 <input type="number" id="destreza" name="destreza" class="form-control text-right enter" disabled value="${item.destreza}">
+                <input type="number" id="destreza" name="destreza" class="form-control text-right enter" disabled value="${Math.floor((item.destreza/2)-5)}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Constituição</span>
                 </div>
                 <input type="number" id="constituicao" name="constituicao" class="form-control text-right enter" disabled value="${item.constituicao}">
+                <input type="number" id="destreza" name="destreza" class="form-control text-right enter" disabled value="${Math.floor((item.constituicao/2)-5)}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Inteligência</span>
                 </div>
                 <input type="number" id="inteligencia" name="inteligencia" class="form-control text-right enter" disabled value="${item.inteligencia}">
+                <input type="number" id="destreza" name="destreza" class="form-control text-right enter" disabled value="${Math.floor((item.inteligencia/2)-5)}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Sabedoria</span>
                 </div>
                 <input type="number" id="sabedoria" name="sabedoria" class="form-control text-right enter" disabled value="${item.sabedoria}">
+                <input type="number" id="destreza" name="destreza" class="form-control text-right enter" disabled value="${Math.floor((item.sabedoria/2)-5)}">
             </div>
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                   <span class="input-group-text score-form">Carisma</span>
                 </div>
                 <input type="number" id="carisma" name="carisma" class="form-control text-right enter" disabled value="${item.carisma}">
+                <input type="number" id="destreza" name="destreza" class="form-control text-right enter" disabled value="${Math.floor((item.carisma/2)-5)}">
             </div>
         </div>
         </li>

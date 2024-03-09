@@ -11,8 +11,17 @@ const itemConstituicao = document.getElementById('constituicao')
 const itemInteligencia = document.getElementById('inteligencia')
 const itemSabedoria = document.getElementById('sabedoria')
 const itemCarisma = document.getElementById('carisma')
+const itemAtributos = [itemForca, itemDestreza, itemConstituicao, itemInteligencia, itemSabedoria, itemCarisma]
+const itemAtletismo = document.getElementById('atletismo')
+const itemPericias = []
 const itemHabilidades = document.getElementById('habilidades')
 const itemArma1 = document.getElementById('arma1')
+const itemArma2 = document.getElementById('arma2')
+const itemArma3 = document.getElementById('arma3')
+const itemArma4 = document.getElementById('arma4')
+const itemArma5 = document.getElementById('arma5')
+const itemArma6 = document.getElementById('arma6')
+const itemArmas = [itemArma1, itemArma2, itemArma3, itemArma4, itemArma5, itemArma6]
 const itemMagias = document.getElementById('magias')
 const divLista = document.getElementById('lista')
 const salvar = document.getElementById('salvar')
@@ -57,7 +66,7 @@ salvar.addEventListener('click', (e) => {
             ca: itemCa.value,
             hp: itemHp.value,
             habilidades: itemHabilidades.value,
-            armas: itemArma1.value,
+            armas: itemArmas.value,
             magias: itemMagias.value,
             forca: itemForca.value,
             destreza: itemDestreza.value,
@@ -75,7 +84,7 @@ salvar.addEventListener('click', (e) => {
         itemCa.value = ''
         itemHp.value = ''
         itemHabilidades.value = ''
-        itemArma1.value = ''
+        itemArmas.value = ''
         itemForca.value = ''
         itemDestreza.value = ''
         itemConstituicao.value = ''
