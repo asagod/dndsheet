@@ -127,8 +127,6 @@
                         <input type="text" id="carisma" name="carisma" class="form-control text-right" placeholder='0'>
                     </div>
                 </div>
-            </div>
-            <div class="row">
                 <div class="form-group col-xs-12 col-lg-12">
                     <label for="pericias">Perícias</label>
                     <div class="align-content-center">
@@ -149,7 +147,9 @@
                         <input type="checkbox" id="natureza" name="natureza" value="Natureza">
                         <label for="natureza">Natureza</label><br>
                         <input type="checkbox" id="religiao" name="religiao" value="Religião">
-                        <label for="religiao">Religião</label><br>
+                        <label for="religiao">Religião</label>
+                    </div>
+                    <div class="align-content-center">
                         <input type="checkbox" id="adestrar_animais" name="adestrar_animais" value="Adestrar Animais">
                         <label for="adestrar_animais">Adestrar Animais</label><br>
                         <input type="checkbox" id="intuicao" name="intuicao" value="Intuição">
@@ -167,37 +167,44 @@
                         <input type="checkbox" id="intimidacao" name="intimidacao" value="Intimidação">
                         <label for="intimidacao">Intimidação</label><br>
                         <input type="checkbox" id="persuasao" name="persuasao" value="Persuasão">
-                        <label for="persuasao">Persuasão</label><br>
+                        <label for="persuasao">Persuasão</label>
                     </div>
                 </div>
             </div>
-            <div class="form-group col-xs-12 col-lg-5">
-                <label for="habilidades">Habilidades</label>
-                <textarea class="form-control" name="habilidades" id="habilidades" rows="10"
-                    placeholder="Habilidades"></textarea>
-            </div>
-            <div class="form-group col-xs-12 col-lg-5">
-                <label for="armas">Armas</label>
-                <textarea class="form-control" name="armas" id="armas" rows="10" placeholder="Armas"></textarea>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-xs-12 col-lg-12">
-                <div class="align-content-center">
-                    <label for="magias">Magias</label>
-                    <textarea class="form-control" name="magias" id="magias" rows="10" placeholder="Magias"></textarea>
+            <div class="row">
+                <div class="form-group col-xs-12 col-lg-5">
+                    <label for="habilidades">Habilidades</label>
+                    <textarea class="form-control" name="habilidades" id="habilidades" rows="10"
+                        placeholder="Habilidades"></textarea>
+                </div>
+                <div class="form-group col-xs-12 col-lg-5">
+                    <label for="armas">Armas</label>
+                    <input type="text" class="form-control" name="arma1" id="arma1"><br>
+                    <input type="text" class="form-control" name="arma2" id="arma2"><br>
+                    <input type="text" class="form-control" name="arma3" id="arma3"><br>
+                    <input type="text" class="form-control" name="arma4" id="arma4"><br>
+                    <input type="text" class="form-control" name="arma5" id="arma5"><br>
+                    <input type="text" class="form-control" name="arma6" id="arma6">
                 </div>
             </div>
-        </div>
-        <a class="btn btn-primary" id="salvar">Salvar</a>
-        <br>
-        <div id="lista">
+            <div class="row">
+                <div class="form-group col-xs-12 col-lg-12">
+                    <div class="align-content-center">
+                        <label for="magias">Magias</label>
+                        <textarea class="form-control" name="magias" id="magias" rows="10"
+                            placeholder="Magias"></textarea>
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-primary" id="salvar">Salvar</a>
+            <br>
+            <div id="lista">
 
-        </div>
-        <br>
-        <div class="container" id="itensRenderizados">
-            <!-- Auto rendered itens -->
-        </div>
+            </div>
+            <br>
+            <div class="container" id="itensRenderizados">
+                <!-- Auto rendered itens -->
+            </div>
         </div>
     </section>
     <script src="https://asagod.github.io/dndsheet/service-worker.js"></script>
