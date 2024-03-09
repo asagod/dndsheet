@@ -47,7 +47,7 @@ const salvar = document.getElementById('salvar')
 const itensRenderizados = document.getElementById('itensRenderizados')
 
 for (const element of itemPericias){
-    if (element.value == true){
+    if (element.value == "true"){
         proeficiencias.push(profBonus)
     } else {
         proeficiencias.push(0)
@@ -102,6 +102,7 @@ salvar.addEventListener('click', (e) => {
             inteligencia: itemInteligencia.value,
             sabedoria: itemSabedoria.value,
             carisma: itemCarisma.value,
+            atributos: itemAtributos,
             proeficiencias: proeficiencias,
         }
         componentList_v2(lista.todos)
