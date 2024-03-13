@@ -34,13 +34,13 @@
       <li class="list-group-item">
         <div class="container">
           <label for="customRange1" class="form-label">Pontos de Vida</label>
-          <input type="range" class="form-range" id="customRange1">
-          <div class="container" role="group">
-            <output for="range" id="output">10</output>
-            <output for="range" id="output_max">50</output>
-          </div>
-          <div class="btn-group" role="group" aria-label="Button group">
+          <div class="input-group-prepend">
+            <output for="range" class="input-group-text" id="output">10</output>
             <button id="minus" class="btn btn-secondary">-</button>
+          </div>
+          <input type="range" class="form-range" id="customRange1">
+          <div class="input-group-append">
+            <output for="range" class="input-group-text" id="output_max">50</output>
             <button id="plus" class="btn btn-secondary">+</button>
           </div>
         </div>
