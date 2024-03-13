@@ -46,3 +46,24 @@
   margin-right: auto;
 
 }
+
+.range-container {
+  display: flex;
+  align-items: center;
+}
+.range-input {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+.range-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

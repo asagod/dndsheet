@@ -32,14 +32,15 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-        <div class="input-group mb-3">
-          <label for="customRange1" class="form-label">Pontos de Vida</label>
-          <div class="input-group-prepend">
-            <button id="minus" class="btn btn-secondary">-</button>
-          </div>
-          <input type="range" class="form-range" id="customRange1">
-          <div class="input-group-append">
-            <button id="plus" class="btn btn-secondary">+</button>
+        
+        <div class="container">
+          <div class="form-group">
+            <label for="range" class="form-label">Pontos de Vida</label>
+            <div class="range-container">
+              <button class="range-btn" id="minus-btn">-</button>
+              <input type="range" class="form-control-range range-input" id="range" min="0" max="100" value="50">
+              <button class="range-btn" id="plus-btn">+</button>
+            </div>
           </div>
         </div>
         <output for="range" class="input-group-text" id="output">10</output>
