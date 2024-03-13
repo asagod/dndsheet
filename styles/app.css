@@ -51,10 +51,12 @@
   display: flex;
   align-items: center;
 }
+
 .range-input {
   flex-grow: 1;
   margin: 0 10px;
 }
+
 .range-btn {
   width: 30px;
   height: 30px;
