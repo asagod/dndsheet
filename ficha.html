@@ -37,7 +37,7 @@
           <div class="form-group">
             <label for="range" class="form-label">Pontos de Vida</label>
             <span class="badge bg-secondary">10</span>
-            <span class="badge bg-secondary">50</span>
+            <span id="hp" class="badge bg-secondary">50</span>
             <div class="range-container">
               <button class="range-btn btn-secondary" id="minus-btn">-</button>
               <input type="range" class="form-control-range form-range range-input" id="range" min="0" max="100" value="50">
@@ -47,11 +47,11 @@
         </div>
       </li>
       <li class="list-group-item">
-        <span class="badge bg-secondary">Armadura: 18</span>
-        <span class="badge bg-secondary">Iniciativa: 4</span>
-        <span class="badge bg-secondary">Movimento: 9</span>
-        <span class="badge bg-secondary">Percepção: 16</span>
-        <span class="badge bg-secondary">Investigação: 14</span>
+        <span id="ac" class="badge bg-secondary">Armadura: 18</span>
+        <span id="ini" class="badge bg-secondary">Iniciativa: 4</span>
+        <span id="mov" class="badge bg-secondary">Movimento: 9</span>
+        <span id="pp" class="badge bg-secondary">Percepção: 16</span>
+        <span id="pi" class="badge bg-secondary">Investigação: 14</span>
       </li>
       <li class="list-group-item">
         <div class="alert alert-secondary">
@@ -77,44 +77,26 @@
           <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <div class="align-content-center form-group col-xs-12 col-lg-6">
-                <input type="input" id="atletismo" name="atletismo" value="true" class="form-control">
-                <label for="atletismo">Atletismo</label><br>
-                <input type="input" id="acrobacia" name="acrobacia" value="true" class="form-control">
-                <label for="acrobacia">Acrobacia</label><br>
-                <input type="input" id="furtividade" name="furtividade" value="true" class="form-control">
-                <label for="furtividade">Furtividade</label><br>
-                <input type="input" id="prestidigitacao" name="prestidigitacao" value="true" class="form-control">
-                <label for="prestidigitacao">Prestidigitação</label><br>
-                <input type="input" id="arcanismo" name="arcanismo" value="true" class="form-control">
-                <label for="arcanismo">Arcanismo</label><br>
-                <input type="input" id="historia" name="historia" value="true" class="form-control">
-                <label for="historia">História</label><br>
-                <input type="input" id="investigacao" name="investigacao" value="true" class="form-control">
-                <label for="investigacao">Investigação</label><br>
-                <input type="input" id="natureza" name="natureza" value="true" class="form-control">
-                <label for="natureza">Natureza</label><br>
-                <input type="input" id="religiao" name="religiao" value="true" class="form-control">
-                <label for="religiao">Religião</label>
-                <input type="input" id="adestrar_animais" name="adestrar_animais" value="true" class="form-control">
-                <label for="adestrar_animais">Adestrar Animais</label><br>
-                <input type="input" id="intuicao" name="intuicao" value="true" class="form-control">
-                <label for="intuicao">Intuição</label><br>
-                <input type="input" id="medicina" name="medicina" value="true" class="form-control">
-                <label for="medicina">Medicina</label><br>
-                <input type="input" id="percepcao" name="percepcao" value="true" class="form-control">
-                <label for="percepcao">Percepção</label><br>
-                <input type="input" id="sobrevivencia" name="sobrevivencia" value="true" class="form-control">
-                <label for="sobrevivencia">Sobrevivência</label><br>
-                <input type="input" id="atuacao" name="atuacao" value="true" class="form-control">
-                <label for="atuacao">Atuação</label><br>
-                <input type="input" id="enganacao" name="enganacao" value="true" class="form-control">
-                <label for="enganacao">Enganação</label><br>
-                <input type="input" id="intimidacao" name="intimidacao" value="true" class="form-control">
-                <label for="intimidacao">Intimidação</label><br>
-                <input type="input" id="persuasao" name="persuasao" value="true" class="form-control">
-                <label for="persuasao">Persuasão</label>
-            </div>
+              <ul class="list-group">
+                <li id="atletismo" class="list-group-item list-group-item-secondary"></li>
+                <li id="acrobacia" class="list-group-item list-group-item-secondary"></li>
+                <li id="furtividade" class="list-group-item list-group-item-secondary"></li>
+                <li id="prestidigitacao" class="list-group-item list-group-item-secondary"></li>
+                <li id="arcanismo" class="list-group-item list-group-item-secondary"></li>
+                <li id="historia" class="list-group-item list-group-item-secondary"></li>
+                <li id="investigacao" class="list-group-item list-group-item-secondary"></li>
+                <li id="natureza" class="list-group-item list-group-item-secondary"></li>
+                <li id="religiao" class="list-group-item list-group-item-secondary"></li>
+                <li id="adestrar_animais" class="list-group-item list-group-item-secondary"></li>
+                <li id="intuicao" class="list-group-item list-group-item-secondary"></li>
+                <li id="medicina" class="list-group-item list-group-item-secondary"></li>
+                <li id="percepcao" class="list-group-item list-group-item-secondary"></li>
+                <li id="sobrevivencia" class="list-group-item list-group-item-secondary"></li>
+                <li id="atuacao" class="list-group-item list-group-item-secondary"></li>
+                <li id="enganacao" class="list-group-item list-group-item-secondary"></li>
+                <li id="intimidacao" class="list-group-item list-group-item-secondary"></li>
+                <li id="persuasao" class="list-group-item list-group-item-secondary"></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -198,7 +180,7 @@
     const personagem = JSON.parse(localStorage.getItem("personagem"));
     document.getElementById("nome_personagem").innerHTML = personagem.name;
     document.getElementById("classe_raca").innerHTML = personagem.classe + " " + personagem.race;
-    document.getElementById("subclasse_nivel").innerHTML = personagem.subclasse + " " + personagem.level;
+    document.getElementById("subclasse_nivel").innerHTML = personagem.subclasse + " Nível " + personagem.level;
     document.getElementById("atletismo").innerHTML = personagem.skills.athletics;
     document.getElementById("acrobacia").innerHTML = personagem.skills.acrobatics;
     document.getElementById("furtividade").innerHTML = personagem.skills.stealth;
@@ -217,6 +199,12 @@
     document.getElementById("enganacao").innerHTML = personagem.skills.deception;
     document.getElementById("intimidacao").innerHTML = personagem.skills.intimidation;
     document.getElementById("persuasao").innerHTML = personagem.skills.persuasion;
+    document.getElementById("hp").innerHTML = personagem.hp;
+    document.getElementById("ac").innerHTML = "Armadura: " + personagem.ac;
+    document.getElementById("mov").innerHTML = "Movimento: " + personagem.speed;
+    document.getElementById("ini").innerHTML = "Iniciativa: " + personagem.initiative;
+    document.getElementById("pi").innerHTML = "Investigação: " + personagem.passive_investigation;
+    document.getElementById("pp").innerHTML = "Percepção: " + personagem.passive_perception;
 
 
   });

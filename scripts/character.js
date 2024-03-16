@@ -1,5 +1,5 @@
 class Character {
-    constructor(name, level, classe, subclasse, race, speed, ac, hp, initiative, attributes, skills, weapons, spells) {
+    constructor(name, level, classe, subclasse, race, speed, ac, hp, initiative, attributes, skills, weapons, abilities, spells) {
       
       this.name = name;
       this.level = level;
@@ -46,6 +46,7 @@ class Character {
       this.passive_perception = (this.perception + 10);
       this.passive_investigation = (this.investigation + 10);
       this.weapons = weapons;
+      this.abilities = abilities;
       this.spells = spells;
 
     }
@@ -64,6 +65,9 @@ class Character {
         speed: this.speed,
         ac: this.ac,
         hp: this.hp,
+        initiative: this.initiative,
+        passive_perception: this.passive_perception,
+        passive_investigation: this.passive_investigation,
         attribute_scores: {
           str_value: this.str_value,
           dex_value: this.dex_value,
@@ -102,6 +106,7 @@ class Character {
         persuasion: this.persuasion
         },
         weapons: this.weapons,
+        abilities: this.abilities,
         spells: this.spells
       };
     }
@@ -115,7 +120,7 @@ class Character {
   }
   
   // Creating a new instance of the Chararcter class
-  const myChar = new Character('Sigmar',5,'Paladino','Vingança','Humano',9,18,12,0,[18,12,18,10,16,18],[true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],'Nenhuma','Nenhum');
+  const myChar = new Character('Sigmar',5,'Paladino','Vingança','Humano',9,18,12,0,[18,12,18,10,16,18],[true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],'Espada','Golpe divino','Resistência a fogo');
   
   // Convert myChar object to JSON
   const personagem = JSON.stringify(myChar);
