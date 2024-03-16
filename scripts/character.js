@@ -9,7 +9,7 @@ class Character {
       this.speed = speed;
       this.ac = ac;
       this.hp = hp;
-      this.image = '/images/pictures/' + image + '.jpeg'
+      this.image = 'images/pictures/' + image + '.jpeg'
       this.attributes = attributes;
       this.str_value = attributes[0];
       this.dex_value = attributes[1];
