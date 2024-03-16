@@ -199,9 +199,25 @@
     document.getElementById("nome_personagem").innerHTML = personagem.name;
     document.getElementById("classe_raca").innerHTML = personagem.classe + " " + personagem.race;
     document.getElementById("subclasse_nivel").innerHTML = personagem.subclasse + " " + personagem.level;
-    document.getElementById("atletismo").value = personagem.athletics;
-    document.getElementById("acrobacia").value = personagem.acrobatics;
-    document.getElementById("arcanismo").value = personagem.arcana;
+    document.getElementById("atletismo").innerHTML = personagem.skills.athletics;
+    document.getElementById("acrobacia").innerHTML = personagem.skills.acrobatics;
+    document.getElementById("furtividade").innerHTML = personagem.skills.stealth;
+    document.getElementById("prestidigitacao").innerHTML = personagem.skills.slightofhand;
+    document.getElementById("arcanismo").innerHTML = personagem.skills.arcana;
+    document.getElementById("historia").innerHTML = personagem.skills.history;
+    document.getElementById("investigacao").innerHTML = personagem.skills.investigation;
+    document.getElementById("natureza").innerHTML = personagem.skills.nature;
+    document.getElementById("religiao").innerHTML = personagem.skills.religion;
+    document.getElementById("adestrar_animais").innerHTML = personagem.skills.animalhandling;
+    document.getElementById("intuicao").innerHTML = personagem.skills.insight;
+    document.getElementById("medicina").innerHTML = personagem.skills.medicine;
+    document.getElementById("percepcao").innerHTML = personagem.skills.perception;
+    document.getElementById("sobrevivencia").innerHTML = personagem.skills.survival;
+    document.getElementById("atuacao").innerHTML = personagem.skills.performance;
+    document.getElementById("enganacao").innerHTML = personagem.skills.deception;
+    document.getElementById("intimidacao").innerHTML = personagem.skills.intimidation;
+    document.getElementById("persuasao").innerHTML = personagem.skills.persuasion;
+
 
   });
   </script>
