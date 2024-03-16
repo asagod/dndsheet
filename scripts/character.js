@@ -68,6 +68,7 @@ class Character {
         initiative: this.initiative,
         passive_perception: this.passive_perception,
         passive_investigation: this.passive_investigation,
+        proficiency: this.proficiency,
         attribute_scores: {
           str_value: this.str_value,
           dex_value: this.dex_value,
