@@ -1,5 +1,5 @@
 class Character {
-    constructor(name, level, classe, subclasse, race, speed, ac, hp, initiative, attributes, skills, weapons, abilities, spells) {
+    constructor(name, image, level, classe, subclasse, race, speed, ac, hp, initiative, attributes, skills, weapons, abilities, spells) {
       
       this.name = name;
       this.level = level;
@@ -9,6 +9,7 @@ class Character {
       this.speed = speed;
       this.ac = ac;
       this.hp = hp;
+      this.image = '/images/pictures/' + image + '.jpeg'
       this.attributes = attributes;
       this.str_value = attributes[0];
       this.dex_value = attributes[1];
@@ -65,6 +66,7 @@ class Character {
         speed: this.speed,
         ac: this.ac,
         hp: this.hp,
+        image: this.image,
         initiative: this.initiative,
         passive_perception: this.passive_perception,
         passive_investigation: this.passive_investigation,
@@ -121,7 +123,7 @@ class Character {
   }
   
   // Creating a new instance of the Chararcter class
-  const myChar = new Character('Sigmar',5,'Paladino','Vingança','Humano',9,18,12,0,[18,12,18,10,16,18],[true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],'Espada','Golpe divino','Resistência a fogo');
+  const myChar = new Character('Sigmar','lyra',5,'Paladino','Vingança','Humano',9,18,12,0,[18,12,18,10,16,18],[true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],'Espada','Golpe divino','Resistência a fogo');
   
   // Convert myChar object to JSON
   const personagem = JSON.stringify(myChar);
