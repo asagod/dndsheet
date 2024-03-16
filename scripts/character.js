@@ -87,7 +87,7 @@ class Character {
         proficiency: this.proficiency,
         skills: {
         athletics: this.athletics,
-        acrobactics: this.acrobatics,
+        acrobatics: this.acrobatics,
         slightofhand: this.slightofhand,
         stealth: this.stealth,
         arcana: this.arcana,
