@@ -17,10 +17,10 @@
 
 <body>
   <div class="card mb-3">
-    <h3 class="card-header">Nome do Personagem</h3>
+    <h3 id="nome_personagem" class="card-header">Nome do Personagem</h3>
     <div class="card-body">
-      <h5 class="card-title">Paladino Humano</h5>
-      <h6 class="card-subtitle text-muted">Subclasse Nível 10</h6>
+      <h5 id="classe_raca" class="card-title">Paladino Humano</h5>
+      <h6 id="subclasse_nivel" class="card-subtitle text-muted">Subclasse Nível 10</h6>
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-block user-select-none" width="100%" height="200"
       aria-label="Placeholder: Image cap" focusable="false" role="img" preserveAspectRatio="xMidYMid slice"
@@ -55,8 +55,13 @@
       </li>
       <li class="list-group-item">
         <div class="alert alert-secondary">
-          <h4 class="alert-heading">Equipamento</h4>
-          Ouro, itens mágicos e variedades.
+          <h4 class="alert-heading">Atributos</h4>
+          Força:
+          Destreza:
+          Constituição:
+          Inteligência:
+          Sabedoria:
+          Carisma:
         </div>
       </li>
     </ul>
@@ -152,7 +157,7 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingFour">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
               Magias
             </button>
           </h2>
@@ -167,9 +172,38 @@
             </div>
           </div>
         </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Características
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
+              plugin adds the appropriate classes that we use to style each element. These classes control the overall
+              appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom
+              CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
+              <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const personagem = JSON.parse(localStorage.getItem("personagem"));
+    document.getElementById("nome_personagem").innerHTML = personagem.name;
+    document.getElementById("classe_raca").innerHTML = personagem.classe + " " + personagem.race;
+    document.getElementById("subclasse_nivel").innerHTML = personagem.subclasse + " " + personagem.level;
+    document.getElementById("atletismo").value = personagem.athletics;
+    document.getElementById("acrobacia").value = personagem.acrobatics;
+    document.getElementById("arcanismo").value = personagem.arcana;
 
+  });
+  </script>
+</body>
 </html>
