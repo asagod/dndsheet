@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gaming Sheet</title>
-    <script src="https://asagod.github.io/dndsheet/scripts/store.js"></script>
-    <script src="https://asagod.github.io/dndsheet/scripts/todo.js"></script>
-    <script defer src="https://asagod.github.io/dndsheet/scripts/app.js"></script>
+    <title>Ficha de Personagem</title>
+    <script defer src="https://asagod.github.io/dndsheet/scripts/char_class.js"></script>
     <link rel="stylesheet" href="https://asagod.github.io/dndsheet/styles/app.css">
     <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.css">
     <link rel="manifest" href="https://asagod.github.io/dndsheet/manifest.json">
@@ -214,16 +212,9 @@
                 </div>
             </div>
             <div>
-                <a class="btn btn-primary" id="salvar">Salvar</a>
+                <button onclick="myFunction()" class="btn btn-primary" id="salvar">Salvar</button>
             </div>
             <br>
-            <div id="lista">
-
-            </div>
-            <br>
-            <div class="container" id="itensRenderizados">
-                <!-- Auto rendered itens -->
-            </div>
         </div>
     </section>
     <script src="https://asagod.github.io/dndsheet/service-worker.js"></script>

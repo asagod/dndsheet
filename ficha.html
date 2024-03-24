@@ -13,6 +13,7 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.css">
   <link rel="stylesheet" href="https://asagod.github.io/dndsheet/styles/app.css">
+  <script src="https://asagod.github.io/dndsheet/scripts/char_load.js"></script>
 </head>
 
 <body>
@@ -164,39 +165,5 @@
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const personagem = JSON.parse(localStorage.getItem("personagem"));
-    document.getElementById("nome_personagem").innerHTML = personagem.name;
-    document.getElementById("classe_raca").innerHTML = personagem.classe + " " + personagem.race;
-    document.getElementById("subclasse_nivel").innerHTML = personagem.subclasse + " Nível " + personagem.level;
-    document.getElementById("atletismo").innerHTML = "Atletismo: " + personagem.skills.athletics;
-    document.getElementById("acrobacia").innerHTML = "Acrobacia: " + personagem.skills.acrobatics;
-    document.getElementById("furtividade").innerHTML = "Furtividade: " + personagem.skills.stealth;
-    document.getElementById("prestidigitacao").innerHTML = "Prestidigitação: " + personagem.skills.slightofhand;
-    document.getElementById("arcanismo").innerHTML = "Arcanismo: " + personagem.skills.arcana;
-    document.getElementById("historia").innerHTML = "História: " + personagem.skills.history;
-    document.getElementById("investigacao").innerHTML = "Investigação: " + personagem.skills.investigation;
-    document.getElementById("natureza").innerHTML = "Natureza: " + personagem.skills.nature;
-    document.getElementById("religiao").innerHTML = "Religião: " + personagem.skills.religion;
-    document.getElementById("adestrar_animais").innerHTML = "Adestrar Animais: " + personagem.skills.animalhandling;
-    document.getElementById("intuicao").innerHTML = "Intuição: " + personagem.skills.insight;
-    document.getElementById("medicina").innerHTML = "Medicina: " + personagem.skills.medicine;
-    document.getElementById("percepcao").innerHTML = "Percepção: " + personagem.skills.perception;
-    document.getElementById("sobrevivencia").innerHTML = "Sobrevivência: " + personagem.skills.survival;
-    document.getElementById("atuacao").innerHTML = "Atuação: " + personagem.skills.performance;
-    document.getElementById("enganacao").innerHTML = "Enganação: " + personagem.skills.deception;
-    document.getElementById("intimidacao").innerHTML = "Intimidação: " + personagem.skills.intimidation;
-    document.getElementById("persuasao").innerHTML = "Persuasão: " + personagem.skills.persuasion;
-    document.getElementById("hp").innerHTML = personagem.hp;
-    document.getElementById("prof").innerHTML = personagem.proficiency;
-    document.getElementById("ac").innerHTML = "Armadura: " + personagem.ac;
-    document.getElementById("mov").innerHTML = "Movimento: " + personagem.speed;
-    document.getElementById("ini").innerHTML = "Iniciativa: " + personagem.initiative;
-    document.getElementById("pi").innerHTML = "Investigação: " + personagem.passive_investigation;
-    document.getElementById("pp").innerHTML = "Percepção: " + personagem.passive_perception;
-    document.getElementById("imagem").src = personagem.image;
-  });
-  </script>
 </body>
 </html>
