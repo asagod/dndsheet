@@ -47,5 +47,5 @@ function saveChar() {
 
     const personagem = JSON.stringify(myChar);
     myChar.save()
-    location.href('../index')
+    window.location.href('../index')
 }
