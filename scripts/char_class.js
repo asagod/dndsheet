@@ -121,12 +121,3 @@ class Character {
 
     }
   }
-  
-  function saveChar(){
-  
-
-  const myChar = new Character('Sigmar','lyra',5,'Paladino','Vingança','Humano',9,18,12,0,[18,12,18,10,16,18],[true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false],'Espada','Golpe divino','Resistência a fogo');
-  
-  const personagem = JSON.stringify(myChar);
-  myChar.save()
-}
