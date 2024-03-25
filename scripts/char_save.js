@@ -47,5 +47,5 @@ function saveChar() {
 
     const personagem = JSON.stringify(myChar);
     myChar.save()
-    window.location.href = '../index'
+    window.location.href = '../dndsheet/ficha'
 }
