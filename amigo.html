@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="windows-1252">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base64 Decoder</title>
 
-    <!-- Bootstrap CDN for styling -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJx3R2h4tC3hO1AcF6FzDaUHH8d5Y7xshlD9QpN2dR9kpBjbF5zF3bM2r02M" crossorigin="anonymous">
-
-    <!-- Custom styles for the page -->
+    <link rel="stylesheet" href="https://asagod.github.io/dndsheet/styles/app.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.css">
+    
     <style>
         body {
             padding-top: 50px;
@@ -27,7 +26,7 @@
             <h3 class="card-title">Amigo Secreto</h3>
         </div>
         <div class="card-body">
-            <p class="lead">Seu amigo secreto é <code>?data=</code></p>
+            <p class="lead">Seu amigo secreto é:</p>
 
             <div id="output" class="alert alert-info" role="alert">
                 <!-- Decoded content will appear here -->
@@ -35,11 +34,6 @@
         </div>
     </div>
 </div>
-
-<!-- Bootstrap JS and dependencies (for interactive components) -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBR1gcV5anY6kWzQXy1xotCdX+49l8A0JJwCw9UQEL0f/1X5" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0RR39Rmk5U7g1BJ1Xysjc6yDYPXyUAR2c7yS29f3LMK3zTz4" crossorigin="anonymous"></script>
-
 <script>
     // Get the base64 string from the URL query parameter
     const urlParams = new URLSearchParams(window.location.search);
