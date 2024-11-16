@@ -4,27 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador</title>
+    <title>Gerador de Nomes</title>
     <link rel="stylesheet" href="https://asagod.github.io/dndsheet/styles/app.css">
     <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #4e73df;
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 1.25rem;
         }
 
         .form-container {
-            margin-bottom: 20px;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .form-container button:focus {
+            outline: none;
+        }
+
+        .btn-primary {
+            background-color: #4e73df;
+            border-color: #4e73df;
+        }
+
+        .btn-secondary {
+            background-color: #f8f9fc;
+            border-color: #ddd;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e1e3e7;
+        }
+
+        .card-footer {
+            padding: 1rem;
+            background-color: #f8f9fc;
+        }
+
+        .card-footer h3 {
+            font-size: 1.25rem;
         }
 
         #entry-list {
-            margin-top: 20px;
             list-style-type: none;
             padding: 0;
+            margin-top: 1rem;
         }
 
         #entry-list li {
-            margin: 5px 0;
+            background-color: #f1f3f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .card-header {
+                font-size: 1.25rem;
+            }
         }
     </style>
 </head>
@@ -32,24 +124,25 @@
 <body>
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header bg-primary text-white">
+            <div class="card-header text-center">
                 <h3 class="card-title">Digite os nomes dos amigos</h3>
             </div>
-            <div class="form-container bg-primary text-white">
+            <div class="form-container">
                 <form id="stringForm" onsubmit="return handleSubmit(event)">
                     <label for="stringInput">Nome:</label>
-                    <input type="text" id="stringInput" name="stringInput" class="form-control">
+                    <input type="text" id="stringInput" name="stringInput" class="form-control" placeholder="Digite o nome">
                     <button type="button" onclick="addEntry()" class="btn btn-secondary">Adicionar</button>
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>
+            <div class="card-footer">
+                <h3>Nomes Salvos</h3>
+                <ul id="entry-list">
+                    <!-- Entries will be displayed here -->
+                </ul>
+            </div>
         </div>
     </div>
-
-    <h3>Nomes Salvos</h3>
-    <ul id="entry-list">
-        <!-- Entries will be displayed here -->
-    </ul>
 
     <script>
         // Array to hold the entries
@@ -82,7 +175,7 @@
             // Save entries array to localStorage
             localStorage.setItem('entries', JSON.stringify(entriesArray));
 
-            // Redirect to another page (e.g., "display.html")
+            // Redirect to another page (e.g., "resultado.html")
             window.location.href = 'resultado.html';
         }
     </script>
