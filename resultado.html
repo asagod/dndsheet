@@ -65,7 +65,7 @@
       const entryList = document.getElementById('entry-list');
       final_values.forEach(entry => {
         const listItem = document.createElement('li');
-        listItem.textContent = "> " + JSON.stringify(entry);
+        listItem.textContent = entry.selected + ": " + entry.info;
         entryList.appendChild(listItem);
       });
     } else {
