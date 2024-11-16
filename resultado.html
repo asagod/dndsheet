@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valores Salvos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #entry-list {
+      margin-top: 20px;
+      list-style-type: none;
+      padding: 0;
+    }
+    #entry-list li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Valores Salvos</h2>
+  <ul id="entry-list">
+    <!-- Entries will be displayed here -->
+  </ul>
+
+  <script>
+    // Retrieve the entries from localStorage
+    const entriesArray = JSON.parse(localStorage.getItem('entries'));
+
+    // If there are entries, display them
+    if (entriesArray && entriesArray.length > 0) {
+      const entryList = document.getElementById('entry-list');
+      entriesArray.forEach(entry => {
+        const listItem = document.createElement('li');
+        listItem.textContent = entry;
+        entryList.appendChild(listItem);
+      });
+    } else {
+      // If no entries, display a message
+      document.getElementById('entry-list').innerHTML = '<li>No entries found.</li>';
+    }
+
+    // Optionally, clear the entries from localStorage after displaying
+    // localStorage.removeItem('entries');
+  </script>
+
+</body>
+</html>
