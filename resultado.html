@@ -31,11 +31,12 @@
   <script>
     // Retrieve the entries from localStorage
     const pessoas = JSON.parse(localStorage.getItem('entries'));
-    const start_pessoas = [];
-    const final_values = [];
+    const todas_pessoas = [];
+    let amigos = []
+    const resultados = [];
 
-    randomize = function (selected) {
-        var index = pessoas.indexOf(selected);
+    randomize = function (pessoa) {
+        var index = pessoas.indexOf(pessoa);
         if (index !== -1) {
             pessoas.splice(index, 1);
         }
@@ -43,30 +44,29 @@
         const random = Math.floor(Math.random() * pessoas.length);
         let spliced = pessoas.splice(random, 1);
         let randomized = spliced[0]
-        pessoas.push(selected)
-        if (selected != randomized) {
-            let info = "https://asagod.github.io/dndsheet/amigo.html?data=" + btoa(randomized)
-            final_values.push({ selected, info })
-        } else {
-            pessoas.push(randomized)
+        pessoas.push(pessoa)
+        if (pessoa != randomized) {
+            let linkAmigo = "https://asagod.github.io/dndsheet/amigo.html?data=" + btoa(randomized)
+            amigos.push(randomized)
+            resultados.push({ pessoa, linkAmigo })
         }
     }
 
 
     for (let i = 0; i < pessoas.length; i++) {
-        start_pessoas.push(pessoas[i])
+        todas_pessoas.push(pessoas[i])
     }
-    for (let j = 0; j < start_pessoas.length; j++) {
-        randomize(start_pessoas[j])
+    for (let j = 0; j < todas_pessoas.length; j++) {
+        randomize(todas_pessoas[j])
     }
 
 
     // If there are entries, display them
-    if (final_values && final_values.length > 0) {
+    if (resultados && resultados.length > 0) {
       const entryList = document.getElementById('entry-list');
-      final_values.forEach(entry => {
+      resultados.forEach(entry => {
         const listItem = document.createElement('li');
-        listItem.textContent = entry.selected + ": " + entry.info;
+        listItem.textContent = entry.pessoa + ": " + entry.linkAmigo;
         entryList.appendChild(listItem);
       });
     } else {
