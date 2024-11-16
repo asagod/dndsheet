@@ -31,13 +31,41 @@
   <script>
     // Retrieve the entries from localStorage
     const entriesArray = JSON.parse(localStorage.getItem('entries'));
+    const pessoas = entriesArray;
+    const start_pessoas = [];
+    const final_values = [];
+
+    randomize = function (selected) {
+        var index = pessoas.indexOf(selected);
+        if (index !== -1) {
+            pessoas.splice(index, 1);
+        }
+
+        const random = Math.floor(Math.random() * pessoas.length);
+        let spliced = pessoas.splice(random, 1);
+        let randomized = spliced[0]
+        pessoas.push(selected)
+        if (selected != randomized) {
+            let info = "https://asagod.github.io/dndsheet/amigo.html?data=" + btoa(randomized)
+            final_values.push({ selected, info })
+        }
+    }
+
+
+    for (let i = 0; i < pessoas.length; i++) {
+        start_pessoas.push(pessoas[i])
+    }
+    for (let j = 0; j < start_pessoas.length; j++) {
+        randomize(start_pessoas[j])
+    }
+
 
     // If there are entries, display them
-    if (entriesArray && entriesArray.length > 0) {
+    if (final_values && final_values.length > 0) {
       const entryList = document.getElementById('entry-list');
-      entriesArray.forEach(entry => {
+      final_values.forEach(entry => {
         const listItem = document.createElement('li');
-        listItem.textContent = "> " + entry;
+        listItem.textContent = "> " + JSON.stringify(entry);
         entryList.appendChild(listItem);
       });
     } else {
@@ -46,7 +74,7 @@
     }
 
     // Optionally, clear the entries from localStorage after displaying
-    // localStorage.removeItem('entries');
+    localStorage.removeItem('entries');
   </script>
 
 </body>
