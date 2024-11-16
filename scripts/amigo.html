@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 Decoder</title>
+</head>
+<body>
+    <h1>Base64 Decoder</h1>
+    <p>Enter a base64-encoded string in the URL parameter <code>?data=</code>.</p>
+    
+    <div id="output"></div>
+
+    <script>
+        // Get the base64 string from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const base64String = urlParams.get('data');
+
+        if (base64String) {
+            try {
+                // Decode the base64 string and display the result
+                const decodedString = atob(base64String); // Decode the base64 string
+                document.getElementById('output').innerText = decodedString;
+            } catch (error) {
+                document.getElementById('output').innerText = 'Error decoding the base64 string.';
+            }
+        } else {
+            document.getElementById('output').innerText = 'No base64 data found in the URL.';
+        }
+    </script>
+</body>
+</html>
