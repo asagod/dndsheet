@@ -26,13 +26,13 @@
 </head>
 <body>
 
-  <h2>Enter Your String Entries</h2>
-  <div class="form-container">
+  <h2>Digite os nomes dos amigos</h2>
+  <div class="form-container bg-primary text-white">
     <form id="stringForm" onsubmit="return handleSubmit(event)">
       <label for="stringInput">Nome:</label>
       <input type="text" id="stringInput" name="stringInput" required>
-      <button type="button" onclick="addEntry()">Adicionar</button>
-      <button type="submit">Enviar</button>
+      <button type="button" onclick="addEntry()" class="btn btn-secondary">Adicionar</button>
+      <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
   </div>
 
