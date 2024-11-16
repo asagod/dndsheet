@@ -1,81 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerador</title>
-  <link rel="stylesheet" href="https://asagod.github.io/dndsheet/styles/app.css">
-  <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    .form-container {
-      margin-bottom: 20px;
-    }
-    #entry-list {
-      margin-top: 20px;
-      list-style-type: none;
-      padding: 0;
-    }
-    #entry-list li {
-      margin: 5px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador</title>
+    <link rel="stylesheet" href="https://asagod.github.io/dndsheet/styles/app.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        #entry-list {
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #entry-list li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="container">
+        <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title">Digite os nomes dos amigos</h3>
+            </div>
+            <div class="form-container bg-primary text-white">
+                <form id="stringForm" onsubmit="return handleSubmit(event)">
+                    <label for="stringInput">Nome:</label>
+                    <input type="text" id="stringInput" name="stringInput" class="form-control">
+                    <button type="button" onclick="addEntry()" class="btn btn-secondary">Adicionar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-  <h2>Digite os nomes dos amigos</h2>
-  <div class="form-container bg-primary text-white">
-    <form id="stringForm" onsubmit="return handleSubmit(event)">
-      <label for="stringInput">Nome:</label>
-      <input type="text" id="stringInput" name="stringInput" required>
-      <button type="button" onclick="addEntry()" class="btn btn-secondary">Adicionar</button>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-  </div>
+    <h3>Nomes Salvos</h3>
+    <ul id="entry-list">
+        <!-- Entries will be displayed here -->
+    </ul>
 
-  <h3>Nomes Salvos</h3>
-  <ul id="entry-list">
-    <!-- Entries will be displayed here -->
-  </ul>
+    <script>
+        // Array to hold the entries
+        let entriesArray = [];
 
-  <script>
-    // Array to hold the entries
-    let entriesArray = [];
+        // Function to add an entry to the array
+        function addEntry() {
+            const inputField = document.getElementById('stringInput');
+            const entry = inputField.value.trim();
 
-    // Function to add an entry to the array
-    function addEntry() {
-      const inputField = document.getElementById('stringInput');
-      const entry = inputField.value.trim();
-      
-      if (entry) {
-        // Add entry to the array
-        entriesArray.push(entry);
+            if (entry) {
+                // Add entry to the array
+                entriesArray.push(entry);
 
-        // Display the new entry in the list
-        const entryList = document.getElementById('entry-list');
-        const newListItem = document.createElement('li');
-        newListItem.textContent = entry;
-        entryList.appendChild(newListItem);
+                // Display the new entry in the list
+                const entryList = document.getElementById('entry-list');
+                const newListItem = document.createElement('li');
+                newListItem.textContent = entry;
+                entryList.appendChild(newListItem);
 
-        // Clear the input field
-        inputField.value = '';
-      }
-    }
+                // Clear the input field
+                inputField.value = '';
+            }
+        }
 
-    // Handle form submission
-    function handleSubmit(event) {
-      event.preventDefault();
+        // Handle form submission
+        function handleSubmit(event) {
+            event.preventDefault();
 
-      // Save entries array to localStorage
-      localStorage.setItem('entries', JSON.stringify(entriesArray));
+            // Save entries array to localStorage
+            localStorage.setItem('entries', JSON.stringify(entriesArray));
 
-      // Redirect to another page (e.g., "display.html")
-      window.location.href = 'resultado.html';
-    }
-  </script>
+            // Redirect to another page (e.g., "display.html")
+            window.location.href = 'resultado.html';
+        }
+    </script>
 
 </body>
+
 </html>

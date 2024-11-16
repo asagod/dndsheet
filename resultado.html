@@ -37,7 +37,7 @@
       const entryList = document.getElementById('entry-list');
       entriesArray.forEach(entry => {
         const listItem = document.createElement('li');
-        listItem.textContent = entry;
+        listItem.textContent = "> " + entry;
         entryList.appendChild(listItem);
       });
     } else {
