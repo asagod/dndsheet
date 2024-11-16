@@ -30,8 +30,7 @@
 
   <script>
     // Retrieve the entries from localStorage
-    const entriesArray = JSON.parse(localStorage.getItem('entries'));
-    const pessoas = entriesArray;
+    const pessoas = JSON.parse(localStorage.getItem('entries'));
     const start_pessoas = [];
     const final_values = [];
 
@@ -48,6 +47,8 @@
         if (selected != randomized) {
             let info = "https://asagod.github.io/dndsheet/amigo.html?data=" + btoa(randomized)
             final_values.push({ selected, info })
+        } else {
+            pessoas.push(randomized)
         }
     }
 
