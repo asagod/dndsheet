@@ -97,11 +97,11 @@
                 linkSpan.textContent = entry.linkAmigo;
 
 
-                const copyLink = document.createElement('button');
-                copyLink.classList.add("copy-btn");
-                copyLink.classList.add("btn");
-                copyLink.classList.add("btn-secondary");
-                copyLink.textContent = "Copiar";
+                //const copyLink = document.createElement('button');
+                //copyLink.classList.add("copy-btn");
+                //copyLink.classList.add("btn");
+                //copyLink.classList.add("btn-secondary");
+                //copyLink.textContent = "Copiar";
 
 
                 // Append name and link to the list item
@@ -120,21 +120,21 @@
         const copyButtons = document.querySelectorAll("copy-btn");
         
         // Attach event listeners to each copy button
-        copyButtons.forEach(button => {
-            button.addEventListener('click', function() {
+        //copyButtons.forEach(button => {
+            //button.addEventListener('click', function() {
                 // Get the text content of the parent <li> (the line you want to copy)
-                const lineText = button.parentElement.firstChild.textContent.trim();
+                //const lineText = button.parentElement.firstChild.textContent.trim();
                 
                 // Use the Clipboard API to copy the text to the clipboard
-                navigator.clipboard.writeText(lineText).then(() => {
+                //navigator.clipboard.writeText(lineText).then(() => {
                     // Optional: Notify the user that the text has been copied
-                    alert(`Copiado: "${lineText}"`);
-                }).catch(err => {
+                    //alert(`Copiado: "${lineText}"`);
+                //}).catch(err => {
                     // Handle any errors that occur during the copy process
-                    console.error('Não foi possível copiar: ', err);
-                });
-            });
-        });
+                    //console.error('Não foi possível copiar: ', err);
+                //});
+            //});
+        //});
 
         // Optionally, clear the entries from localStorage after displaying
         //localStorage.removeItem('entries');
