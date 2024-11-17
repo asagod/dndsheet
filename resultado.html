@@ -91,9 +91,16 @@
                 linkSpan.classList.add('input-group-text');
                 linkSpan.textContent = entry.linkAmigo;
 
+
+                const copyLink = document.createElement('button');
+                copyLink.classList.add('.copy-btn');
+                copyLink.textContent = <i class="fa-solid fa-copy"></i>;
+
+
                 // Append name and link to the list item
                 listItem.appendChild(nameSpan);
                 listItem.appendChild(linkSpan);
+                linkSpan.appendChild(copyLink);
 
                 // Append the list item to the entry list
                 entryList.appendChild(listItem);
