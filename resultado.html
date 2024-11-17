@@ -22,6 +22,10 @@
         #entry-list li {
             margin: 5px 0;
         }
+
+        .autowidth-custom {
+            overflow: auto;
+        }
     </style>
 </head>
 
@@ -88,13 +92,12 @@
 
                 // Create a span for the 'linkAmigo' to append after the name
                 const linkSpan = document.createElement('span');
-                linkSpan.classList.add('input-group-text');
+                linkSpan.classList.add('input-group-text autowidth-custom');
                 linkSpan.textContent = entry.linkAmigo;
 
 
                 const copyLink = document.createElement('button');
-                copyLink.classList.add('.copy-btn');
-                copyLink.textContent = '<i class="fa-solid fa-copy"></i>';
+                copyLink.classList.add('.copy-btn fa-solid fa-copy');
 
 
                 // Append name and link to the list item
