@@ -65,15 +65,30 @@
 
     // If there are entries, display them
     if (resultados && resultados.length > 0) {
-      const entryList = document.getElementById('entry-list');
-      resultados.forEach(entry => {
+    const entryList = document.getElementById('entry-list');
+    resultados.forEach(entry => {
         const listItem = document.createElement('li');
-        listItem.textContent = entry.pessoa + ": " + entry.linkAmigo;
+        
+        // Create a span for 'pessoa' to prepend to the list item
+        const nameSpan = document.createElement('span');
+        nameSpan.classList.add('entry-person');
+        nameSpan.textContent = entry.pessoa + ": ";
+
+        // Create a span for the 'linkAmigo' to append after the name
+        const linkSpan = document.createElement('span');
+        linkSpan.classList.add('entry-link');
+        linkSpan.textContent = entry.linkAmigo;
+
+        // Append name and link to the list item
+        listItem.appendChild(nameSpan);
+        listItem.appendChild(linkSpan);
+        
+        // Append the list item to the entry list
         entryList.appendChild(listItem);
-      });
+    });
     } else {
-      // If no entries, display a message
-      document.getElementById('entry-list').innerHTML = '<li>Nenhum amigo encontrado. :(</li>';
+    // If no entries, display a message
+    document.getElementById('entry-list').innerHTML = '<li> Nenhum amigo encontrado. :( </li>';
     }
 
     // Optionally, clear the entries from localStorage after displaying
