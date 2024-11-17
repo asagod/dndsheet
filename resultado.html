@@ -30,41 +30,35 @@
 
   <script>
     // Retrieve the entries from localStorage
-    const pessoas = JSON.parse(localStorage.getItem('entries')) || []; // Use an empty array if null
-    const amigos = [];
+    const pessoas = JSON.parse(localStorage.getItem('entries'));
+    const todas_pessoas = [];
+    let amigos = []
     const resultados = [];
 
-    function randomize(pessoa) {
-        const index = pessoas.indexOf(pessoa);
+    randomize = function (pessoa) {
+        var index = pessoas.indexOf(pessoa);
         if (index !== -1) {
-            pessoas.splice(index, 1); // Remove the person from the array
+            pessoas.splice(index, 1);
         }
 
-        if (pessoas.length === 0) {
-            return; // Prevent errors when there's no one left to pair
-        }
-
-        const randomIndex = Math.floor(Math.random() * pessoas.length);
-        const randomized = pessoas[randomIndex];
-        pessoas.splice(randomIndex, 1); // Remove the randomly selected person
-
-        // Add the person back at the end of the array
-        pessoas.push(pessoa);
-
-        if (pessoa !== randomized) {
-            const linkAmigo = "https://asagod.github.io/dndsheet/amigo.html?data=" + btoa(randomized);
-            amigos.push(randomized);
-            resultados.push({ pessoa, linkAmigo });
+        const random = Math.floor(Math.random() * pessoas.length);
+        let spliced = pessoas.splice(random, 1);
+        let randomized = spliced[0]
+        pessoas.push(pessoa)
+        if (pessoa != randomized) {
+            let linkAmigo = "https://asagod.github.io/dndsheet/amigo.html?data=" + btoa(randomized)
+            amigos.push(randomized)
+            resultados.push({ pessoa, linkAmigo })
         }
     }
 
-    // Loop through each person in the array and randomize their pair
+
     for (let i = 0; i < pessoas.length; i++) {
-        randomize(pessoas[i]);
+        todas_pessoas.push(pessoas[i])
     }
-
-    console.log(resultados); // You can check the results array here
-
+    for (let j = 0; j < todas_pessoas.length; j++) {
+        randomize(todas_pessoas[j])
+    }
 
 
     // If there are entries, display them
