@@ -44,7 +44,9 @@
         const random = Math.floor(Math.random() * pessoas.length);
         let spliced = pessoas.splice(random, 1);
         let randomized = spliced[0]
-        pessoas.push(pessoa)
+        if (!amigos.includes(pessoa)) {
+            pessoas.push(pessoa)
+        }
         if (pessoa != randomized) {
             let linkAmigo = "https://asagod.github.io/dndsheet/amigo.html?data=" + btoa(randomized)
             amigos.push(randomized)
