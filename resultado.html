@@ -1,99 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://asagod.github.io/dndsheet/styles/app.css">
-  <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.css">
-  <title>Valores Salvos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    #entry-list {
-      margin-top: 20px;
-      list-style-type: none;
-      padding: 0;
-    }
-    #entry-list li {
-      margin: 5px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://asagod.github.io/dndsheet/styles/app.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.css">
+    <title>Valores Salvos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #entry-list {
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #entry-list li {
+            margin: 5px 0;
+        }
+    </style>
 </head>
+
 <body>
 
-  <h2>Valores Salvos</h2>
-  <ul id="entry-list">
-    <!-- Entries will be displayed here -->
-  </ul>
+    <div class="container">
+        <div class="card shadow-lg">
+            <div class="card-header text-center">
+                <h3 class="card-title">Sorteio</h3>
+            </div>
+            <div class="card-body">
+                <ul id="entry-list">
+                    <!-- Entries will be displayed here -->
+                </ul>
+            </div>
+        </div>
+    </div>
 
-  <script>
-    // Retrieve the entries from localStorage
-    const pessoas = JSON.parse(localStorage.getItem('entries'));
-    const todas_pessoas = [];
-    let amigos = []
-    const resultados = [];
+    <script>
+        // Retrieve the entries from localStorage
+        const pessoas = JSON.parse(localStorage.getItem('entries'));
+        const todas_pessoas = [];
+        let amigos = []
+        const resultados = [];
 
-    randomize = function (pessoa) {
-        var index = pessoas.indexOf(pessoa);
-        if (index !== -1) {
-            pessoas.splice(index, 1);
+        randomize = function (pessoa) {
+            var index = pessoas.indexOf(pessoa);
+            if (index !== -1) {
+                pessoas.splice(index, 1);
+            }
+
+            const random = Math.floor(Math.random() * pessoas.length);
+            let spliced = pessoas.splice(random, 1);
+            let randomized = spliced[0]
+            if (!amigos.includes(pessoa)) {
+                pessoas.push(pessoa)
+            }
+            if (pessoa != randomized) {
+                let linkAmigo = "https://asagod.github.io/dndsheet/amigo.html?data=" + btoa(randomized)
+                amigos.push(randomized)
+                resultados.push({ pessoa, linkAmigo })
+            }
         }
 
-        const random = Math.floor(Math.random() * pessoas.length);
-        let spliced = pessoas.splice(random, 1);
-        let randomized = spliced[0]
-        if (!amigos.includes(pessoa)) {
-            pessoas.push(pessoa)
+
+        for (let i = 0; i < pessoas.length; i++) {
+            todas_pessoas.push(pessoas[i])
         }
-        if (pessoa != randomized) {
-            let linkAmigo = "https://asagod.github.io/dndsheet/amigo.html?data=" + btoa(randomized)
-            amigos.push(randomized)
-            resultados.push({ pessoa, linkAmigo })
+        for (let j = 0; j < todas_pessoas.length; j++) {
+            randomize(todas_pessoas[j])
         }
-    }
 
 
-    for (let i = 0; i < pessoas.length; i++) {
-        todas_pessoas.push(pessoas[i])
-    }
-    for (let j = 0; j < todas_pessoas.length; j++) {
-        randomize(todas_pessoas[j])
-    }
+        // If there are entries, display them
+        if (resultados && resultados.length > 0) {
+            const entryList = document.getElementById('entry-list');
+            resultados.forEach(entry => {
+                const listItem = document.createElement('li');
 
+                // Create a span for 'pessoa' to prepend to the list item
+                const nameSpan = document.createElement('span');
+                nameSpan.classList.add('input-group-prepend');
+                nameSpan.textContent = entry.pessoa;
 
-    // If there are entries, display them
-    if (resultados && resultados.length > 0) {
-    const entryList = document.getElementById('entry-list');
-    resultados.forEach(entry => {
-        const listItem = document.createElement('li');
-        
-        // Create a span for 'pessoa' to prepend to the list item
-        const nameSpan = document.createElement('span');
-        nameSpan.classList.add('entry-person');
-        nameSpan.textContent = entry.pessoa + ": ";
+                // Create a span for the 'linkAmigo' to append after the name
+                const linkSpan = document.createElement('span');
+                linkSpan.classList.add('input-group-text');
+                linkSpan.textContent = entry.linkAmigo;
 
-        // Create a span for the 'linkAmigo' to append after the name
-        const linkSpan = document.createElement('span');
-        linkSpan.classList.add('entry-link');
-        linkSpan.textContent = entry.linkAmigo;
+                // Append name and link to the list item
+                listItem.appendChild(nameSpan);
+                listItem.appendChild(linkSpan);
 
-        // Append name and link to the list item
-        listItem.appendChild(nameSpan);
-        listItem.appendChild(linkSpan);
-        
-        // Append the list item to the entry list
-        entryList.appendChild(listItem);
-    });
-    } else {
-    // If no entries, display a message
-    document.getElementById('entry-list').innerHTML = '<li> Nenhum amigo encontrado. :( </li>';
-    }
+                // Append the list item to the entry list
+                entryList.appendChild(listItem);
+            });
+        } else {
+            // If no entries, display a message
+            document.getElementById('entry-list').innerHTML = '<li> Nenhum amigo encontrado. :( </li>';
+        }
 
-    // Optionally, clear the entries from localStorage after displaying
-    localStorage.removeItem('entries');
-  </script>
+        // Optionally, clear the entries from localStorage after displaying
+        localStorage.removeItem('entries');
+    </script>
 
 </body>
+
 </html>
