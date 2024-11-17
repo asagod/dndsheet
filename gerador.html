@@ -109,7 +109,8 @@
             <div class="form-container">
                 <form id="stringForm" onsubmit="return handleSubmit(event)">
                     <label for="stringInput">Nome:</label>
-                    <input type="text" id="stringInput" name="stringInput" class="form-control" placeholder="Digite o nome">
+                    <input type="text" id="stringInput" name="stringInput" class="form-control"
+                        placeholder="Digite o nome">
                     <button type="button" onclick="addEntry()" class="btn btn-secondary">Adicionar</button>
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
@@ -136,10 +137,23 @@
                 // Add entry to the array
                 entriesArray.push(entry);
 
-                // Display the new entry in the list
-                const entryList = document.getElementById('entry-list');
+                // Create a new list item with the entry text
                 const newListItem = document.createElement('li');
                 newListItem.textContent = entry;
+
+                // Add a click event to the list item for removal
+                newListItem.addEventListener('click', () => {
+                    // Remove entry from the array
+                    const index = entriesArray.indexOf(entry);
+                    if (index > -1) {
+                        entriesArray.splice(index, 1);
+                    }
+
+                    // Remove the list item from the DOM
+                    entryList.removeChild(newListItem);
+                });
+
+                // Append the new list item to the list
                 entryList.appendChild(newListItem);
 
                 // Clear the input field
